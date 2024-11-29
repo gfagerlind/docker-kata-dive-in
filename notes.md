@@ -1,3 +1,13 @@
+Wanna run some vms locally because it's fun and segregating at the same time?
+
+Kata containers - my take - is small images that are spawned by some vm provider
+(qemu-kvm in this case) that then consumes a container and sets that up inside the vm,
+and puts you there like a regular container.
+
+Not sure how much container shenaningas works out of the box (networks, iohardware, volumes)
+
+Not sure how much vm shenaningas works out of the box (networks, iohardware, volumes)
+
 # TLDR (hopefully up to date)
 `yay -Syu qemu-system-x86 virtiofsd`
 instead do what https://habr.com/en/articles/840538/ says
@@ -10,8 +20,9 @@ sudo ctr run --rm -t --runtime io.containerd.kata.v2 docker.io/library/archlinux
 ```
 and
 ```
-sudo docker run --runtime io.containerd.run.kata.v2 -it ubuntu bash` works
+sudo docker run --runtime io.containerd.run.kata.v2 -it ubuntu bash
 ```
+works
 
 # Travel the same footsteps?
 ```
