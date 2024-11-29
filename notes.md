@@ -17,3 +17,14 @@ after that:
 sudo ctr run --rm -t --runtime io.containerd.kata.v2 docker.io/library/archlinux:latest example-container-name bash
 ```
 worked for me
+
+but not the rest, so screw that.
+so remove everyting but:
+
+`yay -Syu qemu-system-x86 virtiofsd`
+
+instead do what https://habr.com/en/articles/840538/ says
+
+(or use https://github.com/kata-containers/kata-containers/blob/main/utils/README.md#kata-manager)
+
+then it works - at least the docker part...
