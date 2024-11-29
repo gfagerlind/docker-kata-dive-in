@@ -1,3 +1,19 @@
+# TLDR (hopefully up to date)
+`yay -Syu qemu-system-x86 virtiofsd`
+instead do what https://habr.com/en/articles/840538/ says
+
+(or use https://github.com/kata-containers/kata-containers/blob/main/utils/README.md#kata-manager)
+
+then hopefully both
+```
+sudo ctr run --rm -t --runtime io.containerd.kata.v2 docker.io/library/archlinux:latest example-container-name bash
+```
+and
+```
+sudo docker run --runtime io.containerd.run.kata.v2 -it ubuntu bash` works
+```
+
+# Travel the same footsteps?
 ```
 yay -Syu kata-runtime-bin linux-kata-bin kata-containers-image-bin qemu-system-x86 virtiofsd
 sudo mkdir -p /opt/kata/share/defaults/kata-containers/configuration.toml
